@@ -1,0 +1,18 @@
+
+spring:
+  config:
+    activate:
+      on-profile: euntaek
+  datasource:
+    url: "jdbc:mysql://localhost:3306/ThingiMarket"
+    username: "thingi_market"
+    password: "choi2unt@2k)"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
