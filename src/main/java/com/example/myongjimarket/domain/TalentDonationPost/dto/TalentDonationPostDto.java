@@ -23,13 +23,15 @@ public class TalentDonationPostDto {
     private LocalDateTime updated_at;
     private String person;
     private String plan;
+    private Long UserID;
 
     public TalentDonationPostDto() {
         this.created_at = LocalDateTime.now();
         this.updated_at = LocalDateTime.now();
+        this.UserID = 1L; // UserID 기본값으로 설정
     }
 
-    public TalentDonationPostDto(Long id, String title, String content, String topic, byte[] picture, String place, LocalDateTime created_at, LocalDateTime updated_at, String person, String plan) {
+    public TalentDonationPostDto(Long id, String title, String content, String topic, byte[] picture, String place, LocalDateTime created_at, LocalDateTime updated_at, String person, String plan, Long UserID) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -40,6 +42,7 @@ public class TalentDonationPostDto {
         this.updated_at = updated_at;
         this.person = person;
         this.plan = plan;
+        this.UserID = UserID;
     }
 
     public List<TalentDonationPostDto> convertToDtoList(List<TalentDonationPost> entityList) {
@@ -65,7 +68,8 @@ public class TalentDonationPostDto {
                 entity.getCreated_at(),
                 entity.getUpdated_at(),
                 entity.getPerson(),
-                entity.getPlan()
+                entity.getPlan(),
+                entity.getUserID()
         );
     }
 
@@ -81,7 +85,7 @@ public class TalentDonationPostDto {
                 dto.getUpdated_at(),
                 dto.getPerson(),
                 dto.getPlan(),
-                null
+                dto.getUserID()
         );
     }
 }
