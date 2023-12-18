@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class SignupController {
     @Autowired
     private SignupService signupService;
+
     @GetMapping()
     public ModelAndView getSignupPage(){
         ModelAndView modelAndView = new ModelAndView();
@@ -28,7 +29,7 @@ public class SignupController {
         User registeredUser = signupService.registerNewUser(userDto);
         ModelAndView modelAndView = new ModelAndView();
         if (registeredUser != null) {
-            modelAndView.setViewName("soyun/mypage");
+            modelAndView.setViewName("soyun/loginpage"); // modified
             return modelAndView;
         } else {
             modelAndView.setViewName("soyun/signuppage");
