@@ -1,0 +1,150 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* 맨 위부터 시작 */
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1, div{
+    margin: 10px;
+    text-align: center;
+}
+.card-href {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: inherit; /* 링크 색상을 부모 요소로부터 상속 */
+    display: block; /* 링크를 블록 요소로 만들어서 전체 영역 클릭 가능하게 함 */
+}
+
+.card-href:hover {
+    cursor: pointer; /* 호버했을 때 커서를 포인터로 변경 */
+}
+
+
+.nav-button {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: black;
+}
+
+.post-content {
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    max-width: 100px;
+    height: auto;
+}
+
+
+.navbar {
+    background: #7C8FA4; /* 배경 색상 설정 */
+    width: 100%; /* 너비를 화면 전체로 설정 */
+    height: 5.3125rem; /* 높이 설정 */
+    display: flex; /* flexbox 레이아웃 사용 */
+    justify-content: center; /* 내부 요소들을 가운데 정렬 */
+    align-items: center; /* 내부 요소들을 세로 중앙에 위치 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.navbar a {
+    text-decoration: none; /* 밑줄 제거 */
+    font-weight: bold; /* 글자 두껍게 */
+    display: inline-block; /* 인라인 블록 요소로 설정 */
+}
+
+.filter-links, .filter-links a {
+    margin: 0;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.card-container {
+    width: 70%; /* 컨테이너 너비를 70%로 설정 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    gap: 1rem;
+    margin: 20px 0;
+}
+
+.card {
+    width: calc(30% - 20px); /* 너비 설정, 3개의 카드가 한 줄에 들어가도록 */
+    max-width: calc(30% - 20px);
+    min-height: 400px; /* 카드의 최소 높이 설정 */
+    max-height: 700px;
+    overflow: hidden;
+    flex: 1 1 calc((100% / 4) - 1rem); /* 3개가 한 줄에 보이도록 설정 */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    background-color: #F2F2F2;
+    /*background: #fff;*/
+    transition: transform 0.3s ease;
+}
+
+/*.card a {*/
+/*    text-decoration: none;*/
+/*    color: inherit; !* 부모의 색상을 상속받음 *!*/
+/*}*/
+
+/*.card:hover {*/
+/*    transform: translateY(-5px);*/
+/*    cursor: pointer;*/
+/*}*/
+
+.card img {
+    max-width: 100%;
+    margin-top: 20px;
+    width: 100%;
+    height: calc(60%);
+    display: block;
+    border: 2px solid black;
+}
+
+
+@media (max-width: 1024px) {
+    .card {
+        flex: 1 1 calc((100% / 2) - 1rem); /* 화면이 중간 크기일 때 두 개의 카드 */
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        width: 100%; /* 화면이 작을 때 컨테이너 너비를 100%로 */
+    }
+    .card {
+        flex: 1 1 100%; /* 화면이 작을 때 한 줄에 한 개의 카드 */
+    }
+}
+
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #7C8FA4;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+a:hover, a:active {
+    cursor: pointer;
+}

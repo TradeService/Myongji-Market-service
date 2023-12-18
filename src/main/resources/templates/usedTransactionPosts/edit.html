@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Post</title>
+    <link rel="stylesheet" th:href="@{/euntaek-css/usedTransactionPost/usedTransactionNew.css}" />
+
+</head>
+<body>
+<h1>띵지마켓</h1>
+<div class="navbar">
+    <a class="nav-button" href="/used-transaction">중고거래</a>
+    <a class="nav-button" href="/used-transaction">재능기부</a>
+    <a class="nav-button" href="/used-transaction">공동구매</a>
+</div>
+<div class="card">
+    <div class="innercard">
+        <form th:action="@{/used-transaction/update}" th:object="${post}" method="post" enctype="multipart/form-data">
+            <div class="details-container">
+                <input type="hidden" th:field="*{id}" />
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" th:field="*{title}" required />
+                </div>
+                <div>
+                    <label for="content">Content:</label>
+                    <textarea id="content" th:field="*{content}" required></textarea>
+                </div>
+                <div>
+                    <label for="topic">Topic:</label>
+                    <select id="topic" th:field="*{topic}" required>
+                        <option value="전자">전자기기</option>
+                        <option value="식품">식품</option>
+                        <option value="의류">의류</option>
+                        <option value="생활">생활</option>
+                        <option value="잡화">잡화</option>
+                        <option value="헬스">헬스</option>
+                        <option value="상품권">상품권</option>
+                        <option value="교육">교육</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" th:field="*{price}" step="0.01" required />
+                </div>
+                <div>
+                    <label for="place">Place:</label>
+                    <input type="text" id="place" th:field="*{place}" required />
+                </div>
+                <div>
+                    <label for="picture">Picture:</label>
+                    <input type="file" id="picture" name="picture" />
+                </div>
+                <div class="submit-container">
+                    <input type="submit" value="Update Post" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

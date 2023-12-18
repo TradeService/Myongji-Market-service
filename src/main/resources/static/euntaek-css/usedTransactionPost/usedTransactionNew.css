@@ -1,0 +1,189 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1, div{
+    margin: 10px;
+    text-align: center;
+}
+.card-href {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-href:hover {
+    cursor: pointer;
+}
+
+
+.nav-button {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: black;
+}
+
+.post-content {
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    max-width: 100px;
+    height: auto;
+}
+
+
+.navbar {
+    background: #7C8FA4;
+    width: 100%;
+    height: 5.3125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.filter-links, .filter-links a {
+    margin: 0;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.card-container {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 20px 0;
+}
+
+.card {
+    width: calc(45% - 20px);
+    max-width: calc(45% - 20px);
+    overflow: hidden;
+    flex: 1 1 calc((100% / 4) - 1rem);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    background-color: #F2F2F2;
+    /*background: #fff;*/
+    transition: transform 0.3s ease;
+}
+
+/*.card a {*/
+/*    text-decoration: none;*/
+/*    color: inherit; !* 부모의 색상을 상속받음 *!*/
+/*}*/
+
+.card:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.card img {
+    max-width: 100%;
+    margin-top: 20px;
+    width: 100%;
+    height: calc(60%);
+    display: block;
+}
+
+
+@media (max-width: 1024px) {
+    .card {
+        flex: 1 1 calc((100% / 2) - 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        width: 100%;
+    }
+    .card {
+        flex: 1 1 100%;
+    }
+}
+
+.details-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.details-container > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.details-container label {
+    flex-basis: 20%;
+    margin-right: 10px;
+}
+
+.details-container input[type="text"],
+.details-container input[type="number"],
+.details-container textarea,
+.details-container select {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    font-size: 1rem;
+}
+
+.details-container input[type="submit"] {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: #7C8FA4;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.details-container input[type="submit"]:hover {
+    background-color: #6b7c93;
+}
+.submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.innercard {
+    background-color: #BDC6D0;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+
