@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>All Posts</title>
+    <title>중고나라 페이지</title>
     <link rel="stylesheet" th:href="@{/euntaek-css/usedTransactionPost/usedTransaction.css}"/>
 <!--    Toastr 라이브러리 추가-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
@@ -12,12 +12,21 @@
     <script th:src="@{/euntaek-js/card-hover-effect.js}"></script>
 </head>
 <body>
-    <h1>띵지마켓</h1>
+<header class="center">
+    <h1><b>명지</b>마켓</h1>
+    <a href="/">홈</a>
+    <div class="user-profile">
+        <a href="/profile?nickname=soyun">내 정보</a>
+    </div>
+</header>
+
     <div class="navbar">
         <a class="nav-button" href="/used-transaction">중고거래</a>
-        <a class="nav-button" href="/used-transaction">재능기부</a>
-        <a class="nav-button" href="/used-transaction">공동구매</a>
+        <a class="nav-button" href="/talent-transaction">재능기부</a>
+        <a class="nav-button" href="/group-transaction">공동구매</a>
+        <a class="nav-button" href="/manager">관리자페이지</a>
     </div>
+    <h2>중고나라 카테고리</h2>
     <div>
         <a class="nav-button" href="/used-transaction/filter?topic=전자">전자기기</a>
         <a class="nav-button" href="/used-transaction/filter?topic=식품">식품</a>
@@ -29,8 +38,9 @@
         <a class="nav-button" href="/used-transaction/filter?topic=교육">교육</a>
     </div>
     <div>
-        <a class="nav-button" href="/used-transaction/new">+ New Post</a>
+        <a class="nav-button" href="/used-transaction/new">+ 중고나라 게시글 작성</a>
     </div>
+    <h2>중고나라 게시글</h2>
     <div class="card-container">
         <div th:each="post : ${posts}" class="card">
             <a class="card-href" th:href="@{/used-transaction/detail(id=${post.id})}">상세보기</a>

@@ -1,7 +1,6 @@
 package com.example.myongjimarket.domain.UTPComment;
 import com.example.myongjimarket.domain.Report.ReportComment;
 import com.example.myongjimarket.domain.UsedTransactionPost.UsedTransactionPost;
-import com.example.myongjimarket.domain.User.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
