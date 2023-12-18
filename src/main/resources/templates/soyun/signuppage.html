@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>띵지마켓</title>
+    <link rel="stylesheet" href="../../static/styles-soyun/signuppage.css">
+    <!--    thymeleaf용-->
+    <link th:href="@{/styles-soyun/signuppage.css}" rel="stylesheet" />
+</head>
+
+<body>
+    <form class="main_container" action="/signup" method="post">
+        <h1><b>띵지</b>마켓</h1>
+        <div class="input_container">
+            <div class="icon_container">
+                
+                <img class="icon" th:src="@{/images-soyun/icon_person.png}" alt="아이디">
+            </div>
+            <input class="input" name="nickname" type="text" placeholder="닉네임">
+        </div>
+        <div class="input_container">
+            <div class="icon_container">
+                <img class="icon" th:src="@{/images-soyun/icon_person.png}" alt="이름">
+            </div>
+            <input class="input" name="name" type="text" placeholder="이름">
+        </div>
+        <div class="input_container">
+            <div class="icon_container">
+                <img class="icon" th:src="@{/images-soyun/icon_password.png}" alt="비밀번호">
+            </div>
+            <input class="input" name="password" type="password" placeholder="비밀번호">
+        </div>
+        
+        <div class="input_container">
+            <div class="icon_container">
+                <img class="icon mail" th:src="@{/images-soyun/icon_mail.png}" alt="이메일"> 
+            </div>
+            <input class="input" name="email" type="text" placeholder="학교 이메일 주소"> 
+            <!-- <button class="button checkBtn" id="send_check_mail">인증번호 받기</button> -->
+        </div>
+        <div class="button_container">
+            <button class="button">인증번호 받기</button>
+        </div>
+        <div class="input_container">
+            <div class="icon_container">
+                <img class="icon" th:src="@{/images-soyun/icon_check.png}" alt="인증번호">
+            </div>
+            <input class="input" type="text" placeholder="인증번호 입력">
+        </div>
+        <div class="button_container">
+            <input class="button" type="submit" value="회원가입">
+        </div>
+    </form>
+
+</body>
+
+</html>
