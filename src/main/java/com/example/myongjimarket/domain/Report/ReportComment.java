@@ -1,6 +1,5 @@
 package com.example.myongjimarket.domain.Report;
 import com.example.myongjimarket.domain.UTPComment.UTPComment;
-import com.example.myongjimarket.domain.User.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

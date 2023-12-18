@@ -81,8 +81,8 @@ img {
 }
 
 .card {
-    width: calc(30% - 20px); /* 너비 설정, 3개의 카드가 한 줄에 들어가도록 */
-    max-width: calc(30% - 20px);
+    width: calc(70% - 20px); /* 너비 설정, 3개의 카드가 한 줄에 들어가도록 */
+    max-width: calc(70% - 20px);
     min-height: 400px; /* 카드의 최소 높이 설정 */
     max-height: 700px;
     overflow: hidden;
@@ -149,7 +149,9 @@ a:hover, a:active {
     cursor: pointer;
 }
 
-/*//*/
+.center {
+    width: 810px;
+}
 header {
     display: flex;
     flex-direction: row;
@@ -219,6 +221,86 @@ ul {
 }
 li > a {
     color: #000;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.center {
+    width: 810px;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+h1 {
+    color: #000;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+b {
+    color: #023059;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.user-profile {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #000;
+}
+a:visited {
+    color: #000;
+}
+a:hover {
+    color: #000;
+}
+a:active {
+    color: #000;
+}
+nav {
+    width: 100%;
+    margin: 0px;
+    height: 85px;
+    flex-shrink: 0;
+    background: #7c8fa4;
+    display: flex;
+    justify-content: center;
+}
+ul {
+    /* self */
+    list-style: none;
+    /* item */
+    display: flex;
+    padding-left: 41px;
+    padding-right: 41px;
+    justify-content: space-between;
+    align-items: center;
+
+    width: min-content;
+}
+li > a {
+    color: #000;
+    font-family: Inter;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
