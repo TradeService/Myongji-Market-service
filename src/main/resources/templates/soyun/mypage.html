@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>띵지마켓</title>
-    
+
     <link rel="stylesheet" href="../../static/styles-soyun/mypage.css">
     <!--    thymeleaf용-->
     <link th:href="@{/styles-soyun/mypage.css}" rel="stylesheet" />
@@ -31,7 +31,7 @@
             <div class="section1">
                 <div class="left-top">
                     <button class="profile-img"><img src="" alt="프로필"></button>
-                    
+
                     <div>
                         <p>비밀번호</p>
                         <input class="input-password" type="password" placeholder="비밀번호">
@@ -40,19 +40,21 @@
                 <div class="right-top">
                     <div>
                         <p>닉네임</p>
-                        <input type="text" value="사용자닉네임">
+                        <input type="text" th:value="${user.nickname}" readonly>
                     </div>
+
                     <div>
-                        <p>아이디</p>
-                        <input type="text" value="user001">
+                        <p>이름</p>
+                        <input type=" text" th:value="${user.name}" readonly>
                     </div>
+
                     <div>
                         <p>이메일</p>
-                        <input type="text" value="user001@mju.ac.kr">
+                        <input type="text" th:value="${user.email}" readonly>
                     </div>
                     <div>
                         <p>비밀번호 재확인</p>
-                        <input type="password" placeholder="비밀번호 재확인">
+                        <input type=" password" placeholder="비밀번호 재확인">
                     </div>
                 </div>
             </div>
@@ -90,7 +92,8 @@
                         <div class="post-date">2023.11.18</div>
                         <div class="post-writer">띵지마루마리</div>
                     </div>
-                </div><div class="post-card">
+                </div>
+                <div class="post-card">
                     <div>
                         <img class="post-img" src="" alt="">
                         <div class="post-title">게시물이름</div>
@@ -116,7 +119,8 @@
                         <div class="post-date">2023.11.18</div>
                         <div class="post-writer">띵지마루마리</div>
                     </div>
-                </div><div class="post-card">
+                </div>
+                <div class="post-card">
                     <div>
                         <img class="post-img" src="" alt="">
                         <div class="post-title">게시물이름</div>
@@ -126,7 +130,8 @@
                         <div class="post-date">2023.11.18</div>
                         <div class="post-writer">띵지마루마리</div>
                     </div>
-                </div><div class="post-card">
+                </div>
+                <div class="post-card">
                     <div>
                         <img class="post-img" src="" alt="">
                         <div class="post-title">게시물이름</div>

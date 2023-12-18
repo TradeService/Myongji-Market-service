@@ -9,6 +9,17 @@ public class User {
     private Long userId;
     @Column(name ="Password")
     private String password;
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
     @Column(name = "Name")
     private String name;
     @Column(name = "NickName")
@@ -22,17 +33,17 @@ public class User {
     public void setUserId(Long userId) {
         this.userId = userId;
     }
-    public String getUserPassword() {
+    public String getPassword() {
         return password;
     }
-    public void setUserPassword(String Password) {
+    public void setPassword(String Password) {
         this.password = Password;
     }
-    public String getUsername() {
+    public String getName() {
         return name;
     }
 
-    public void setUsername(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 

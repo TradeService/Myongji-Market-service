@@ -1,5 +1,7 @@
 package com.example.myongjimarket.domain.Login;
 
+import com.example.myongjimarket.domain.Profile.ProfileService;
+import com.example.myongjimarket.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -9,6 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginController {
     @Autowired
     private LoginService loginService;
+    @Autowired
+    private ProfileService profileService;
     //http://localhost:8080/post
     // GET /login
     @GetMapping("")
@@ -25,6 +29,8 @@ public class LoginController {
         boolean isAuthenticated = loginService.authenticate(nickname, password);
         ModelAndView modelAndView = new ModelAndView();
         if(isAuthenticated){
+            User user = profileService.getUserProfile(nickname);
+            modelAndView.addObject("user", user);
             modelAndView.setViewName("soyun/mypage");
             return modelAndView;
         }else{
