@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Details</title>
+</head>
+<body>
+<h1>Post Details</h1>
+<div>
+    <p><strong>Title:</strong> <span th:text="${post.title}">Post Title</span></p>
+    <p><strong>Content:</strong> <span th:text="${post.content}">Post Content</span></p>
+    <p><strong>Picture:</strong> <span th:text="${post.picture}">Post Picture</span></p>
+    <p><strong>Place:</strong> <span th:text="${post.place}">Post Place</span></p>
+    <p><strong>Created At:</strong> <span th:text="${post.created_at}">Post Created At</span></p>
+    <p><strong>Updated At:</strong> <span th:text="${post.updated_at}">Post Updated At</span></p>
+    <p><strong>Person:</strong> <span th:text="${post.person}">Post Person</span></p>
+    <p><strong>Plan:</strong> <span th:text="${post.plan}">Post Plan</span></p>
+</div>
+<div>
+    <a href="/talent-transaction">Back to All Posts</a>
+</div>
+</body>
+</html>
