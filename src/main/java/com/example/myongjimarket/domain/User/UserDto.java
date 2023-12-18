@@ -1,4 +1,4 @@
-package com.example.myongjimarket.domain;
+package com.example.myongjimarket.domain.User;
 
 public class UserDto {
     public String getUserID() {

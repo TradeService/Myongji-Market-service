@@ -1,7 +1,7 @@
 package com.example.myongjimarket.domain.Signup;
 
-import com.example.myongjimarket.domain.User;
-import com.example.myongjimarket.domain.UserDto;
+import com.example.myongjimarket.domain.User.User;
+import com.example.myongjimarket.domain.User.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;

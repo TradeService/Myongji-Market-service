@@ -1,4 +1,4 @@
-package com.example.myongjimarket.domain;
+package com.example.myongjimarket.domain.User;
 
 import jakarta.persistence.*;
 
