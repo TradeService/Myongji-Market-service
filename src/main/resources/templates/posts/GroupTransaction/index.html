@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Posts</h1>
+<div th:each="post : ${posts}">
+    <a th:href="@{/posts/{id}(id=${post.postId})}" th:text="${post.content}">Post Content</a>
+    <a th:href="@{/posts/{id}(id=${post.postId})}" th:text="${post.title}">Post Title</a>
+    <a th:href="@{/posts/{id}(id=${post.postId})}" th:text="${post.phoneNum}">Post Content</a>
+    <a th:href="@{/group-transaction/edit(id=${post.postId})}">수정하기</a>
+
+    <form th:action="@{/group-transaction/delete/{id}(id=${post.postId})}" method="post">
+        <button type="submit">Delete</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Post</title>
+</head>
+<body>
+<h1>Update Post</h1>
+<form th:action="@{/talent-transaction/edit}" th:object="${post}" method="post">
+  <p>ID: <input type="hidden" th:field="*{id}"></p>
+  <p>Title: <input type="text" th:field="*{title}" /></p>
+  <p>Content: <input type="text" th:field="*{content}" /></p>
+  <p>Topic: <input type="text" th:field="*{topic}" /></p>
+  <p>Place: <input type="text" th:field="*{place}" /></p>
+  <p>Person: <input type="text" th:field="*{person}" /></p>
+  <p>Plan: <input type="text" th:field="*{plan}" /></p>
+  <p>Picture: <input type="text" th:field="*{picture}" /></p>
+  <p><button type="submit">Update</button></p>
+</form>
+<div>
+  <a th:href="@{/talent-transaction/post/{id}(id=${post.id})}">Back to Post Details</a>
+</div>
+</body>
+</html>
