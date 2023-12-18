@@ -11,7 +11,7 @@ public class LoginService {
 
     public boolean authenticate(String nickname, String password) {
         User user = loginRepository.findByNickname(nickname);
-        if (user != null && user.getUserPassword().equals(password)) {
+        if (user != null && user.getPassword().equals(password)) {
             return true;
         }
         return false;
