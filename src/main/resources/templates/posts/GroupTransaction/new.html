@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Post</title>
+</head>
+<body>
+<h1>New Post</h1>
+<form th:action="@{/group-transaction/post}" th:object="${post}" method="post">
+    <input type="text" th:field="*{title}" placeholder="Title"/>
+    <input type="text" th:field="*{productName}" placeholder="ProductName"/>
+    <input type="text" th:field="*{place}" placeholder="Place"/>
+    <input type="byte[]" th:field="*{picture}" placeholder="Picture"/>
+    <input type="text" th:field="*{phoneNum}" placeholder="PhoneNum"/>
+    <input type="int" th:field="*{maxPerson}" placeholder="MaxPerson"/>
+    <input type="int" th:field="*{nowPerson}" placeholder="nowPerson"/>
+
+    <textarea th:field="*{content}" placeholder="Content"></textarea>
+    <input type="submit" value="Create"/>
+</form>
+</body>
+</html>
