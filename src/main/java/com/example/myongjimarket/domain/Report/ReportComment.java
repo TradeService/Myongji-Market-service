@@ -18,10 +18,6 @@ public class ReportComment {
     private Long reportID;
 
     @ManyToOne
-    @JoinColumn(name = "ReportedUserID", nullable = false)
-    private User reportedUser;
-
-    @ManyToOne
     @JoinColumn(name = "ReportedCommentID", nullable = false)
     private UTPComment reportedComment;
 

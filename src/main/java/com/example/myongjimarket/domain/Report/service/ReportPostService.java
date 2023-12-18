@@ -5,7 +5,6 @@ import com.example.myongjimarket.domain.Report.repository.ReportPostRepository;
 import com.example.myongjimarket.domain.UsedTransactionPost.UsedTransactionPost;
 import com.example.myongjimarket.domain.UsedTransactionPost.repository.UTPRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 
 @Service
@@ -29,7 +28,6 @@ public class ReportPostService {
         } else {
             ReportPost report = new ReportPost();
             report.setReportedPost(post);
-            report.setReportedUser(post.getUser());
             report.setReportCount(1);
             report.setType("U");
             reportPostRepository.save(report);

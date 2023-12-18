@@ -7,12 +7,9 @@ import com.example.myongjimarket.domain.UsedTransactionPost.dto.request.UTPReadA
 import com.example.myongjimarket.domain.UsedTransactionPost.dto.request.UTPReadByIdRequest;
 import com.example.myongjimarket.domain.UsedTransactionPost.dto.request.UTPUpdateRequest;
 import com.example.myongjimarket.domain.UsedTransactionPost.repository.UTPRepository;
-import com.example.myongjimarket.domain.User.User;
-import com.example.myongjimarket.domain.User.repository.UserRepository;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
@@ -21,21 +18,16 @@ import java.util.stream.Collectors;
 public class UTPService {
     private final UTPRepository utpRepository;
     private final CommentRepository commentRepository;
-    private final UserRepository userRepository;
 
-    public UTPService(UTPRepository utpRepository, CommentRepository commentRepository, UserRepository userRepository){
+    public UTPService(UTPRepository utpRepository, CommentRepository commentRepository){
         this.utpRepository = utpRepository;
         this.commentRepository = commentRepository;
-        this.userRepository = userRepository;
     }
     public void createPost(UTPCreateRequest postDTO) throws IOException {
         UsedTransactionPost post = new UsedTransactionPost();
         post.setTitle(postDTO.getTitle());
         post.setContent(postDTO.getContent());
         post.setTopic(postDTO.getTopic());
-
-        User user = userRepository.findById(2).orElseThrow(() -> new RuntimeException("User not found"));
-        post.setUser(user);
         MultipartFile pictureFile = postDTO.getPicture();
         if (pictureFile != null && !pictureFile.isEmpty()) {
             post.setPicture(pictureFile.getBytes());

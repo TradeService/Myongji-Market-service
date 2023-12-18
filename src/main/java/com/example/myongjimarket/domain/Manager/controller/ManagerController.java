@@ -20,12 +20,10 @@ import java.util.List;
 public class ManagerController {
     private final ManagerService managerService;
     private final UTPService utpService;
-    private final CommentService commentService;
 
-    public ManagerController(ManagerService managerService,UTPService utpService,CommentService commentService) {
+    public ManagerController(ManagerService managerService,UTPService utpService) {
         this.managerService = managerService;
         this.utpService = utpService;
-        this.commentService = commentService;
     }
 
     @GetMapping("")

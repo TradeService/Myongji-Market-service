@@ -26,7 +26,6 @@ public class UTPReadByIdRequest {
     private Timestamp createdAt;
     private Timestamp updatedAt;
     private Integer heart;
-    private String userNickname;
 
 
     public UTPReadByIdRequest(UsedTransactionPost post) {
@@ -40,6 +39,5 @@ public class UTPReadByIdRequest {
         this.createdAt = post.getCreatedAt();
         this.updatedAt = post.getUpdatedAt();
         this.heart = post.getHeart();
-        this.userNickname = post.getUser().getNickname();
     }
 }

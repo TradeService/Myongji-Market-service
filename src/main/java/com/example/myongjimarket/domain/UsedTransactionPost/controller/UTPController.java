@@ -46,11 +46,6 @@ public class UTPController {
         model.addAttribute("usedTransactionPost", new UsedTransactionPost());
         return "usedTransactionPosts/new";
     }
-//    @PostMapping("/save")
-//    public String createPost(@ModelAttribute UTPCreateRequest postDTO) throws IOException {
-//        utpService.createPost(postDTO);
-//        return "redirect:/usedTransactionPost";
-//    }
     @PostMapping("/save")
     public String createPost(@ModelAttribute UTPCreateRequest postDTO, RedirectAttributes redirectAttributes) throws IOException {
         utpService.createPost(postDTO);

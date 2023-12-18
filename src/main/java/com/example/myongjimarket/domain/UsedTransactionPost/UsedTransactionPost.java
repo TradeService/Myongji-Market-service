@@ -59,8 +59,4 @@ public class UsedTransactionPost {
 
     @OneToMany(mappedBy = "reportedPost", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ReportPost> reportPosts;
-
-    @ManyToOne
-    @JoinColumn(name = "UserID", nullable = false)
-    private User user;
 }

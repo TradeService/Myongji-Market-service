@@ -18,10 +18,6 @@ public class ReportPost {
     private Long reportID;
 
     @ManyToOne
-    @JoinColumn(name = "ReportedUserID", nullable = false)
-    private User reportedUser;
-
-    @ManyToOne
     @JoinColumn(name = "ReportedPostID", nullable = false)
     private UsedTransactionPost reportedPost;
 

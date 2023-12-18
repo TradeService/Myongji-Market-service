@@ -29,7 +29,6 @@ public class ReportCommentService {
         } else {
             ReportComment newReport = new ReportComment();
             newReport.setReportedComment(comment);
-            newReport.setReportedUser(comment.getUser());
             newReport.setReportCount(1);
             newReport.setType("U");
             reportCommentRepository.save(newReport);

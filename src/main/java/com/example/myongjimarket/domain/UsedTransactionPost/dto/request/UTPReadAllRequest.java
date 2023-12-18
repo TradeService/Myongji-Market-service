@@ -23,7 +23,6 @@ public class UTPReadAllRequest {
     private Timestamp createdAt;
     private Timestamp updatedAt;
     private Integer heart;
-    private String userNickname;
 
     public UTPReadAllRequest(UsedTransactionPost post) {
         this.id = post.getId();
@@ -36,6 +35,5 @@ public class UTPReadAllRequest {
         this.createdAt = post.getCreatedAt();
         this.updatedAt = post.getUpdatedAt();
         this.heart = post.getHeart();
-        this.userNickname = post.getUser().getNickname();
     }
 }

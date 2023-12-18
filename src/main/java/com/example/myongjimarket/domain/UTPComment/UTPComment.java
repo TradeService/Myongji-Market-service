@@ -31,10 +31,6 @@ public class UTPComment {
     @Column(name ="writed_date", nullable = true)
     private LocalDateTime writedDate;
 
-    @ManyToOne
-    @JoinColumn(name = "UserID", nullable = false)
-    private User user; // 사용자 엔터티 참조 추가
-
     @OneToMany(mappedBy = "reportedComment", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ReportComment> reportComments;
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Post Details</title>
-  <link rel="stylesheet" th:href="@{/css/usedTransactionPost/usedTransactionDetail.css}" />
+  <link rel="stylesheet" th:href="@{/euntaek-css/usedTransactionPost/usedTransactionDetail.css}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
@@ -15,12 +15,9 @@
   <a class="nav-button" href="/used-transaction">공동구매</a>
 </div>
 <div class="card">
-
-
-
   <div>
-    <a th:href="@{/used-transaction/edit(id=${post.id})}">Edit Post</a>
-    <a th:href="@{/used-transaction/delete(id=${post.id})}" onclick="return confirm('Are you sure you want to delete this post?')">Delete Post</a>
+    <a th:href="@{/used-transaction/edit(id=${post.id})}">수정하기</a>
+    <a th:href="@{/used-transaction/delete(id=${post.id})}" onclick="return confirm('Are you sure you want to delete this post?')">삭제하기</a>
   </div>
   <p><strong>제목: </strong><span th:text="${post.title}">Title</span></p>
   <div>
@@ -28,7 +25,6 @@
     <img th:unless="${post.pictureBase64}" th:src="@{/images/default-image.jpg}" alt="Default Image" />
   </div>
   <div class="user-report">
-  <p>작성자: <span th:text="${post.userNickname}"></span></p>
   <form th:action="@{/used-transaction/reportPost}" method="post">
     <input type="hidden" name="postId" th:value="${post.id}" />
     <button type="submit">게시글 신고</button>
@@ -56,23 +52,21 @@
         </form>
       </div>
     </div>
-
     <div class="comment-make-container">
-      <h3>Comments</h3>
+      <h3>댓글</h3>
       <form th:action="@{/used-transaction/addComment}" method="post">
         <input type="hidden" name="postId" th:value="${post.id}" />
         <textarea name="content" placeholder="Write a comment..."></textarea>
-        <button type="submit">Submit</button>
+        <button type="submit">작성</button>
       </form>
     </div>
   </div>
   </div>
-
 </div>
 <div id="comment-container" th:each="comment : ${post.comments}" class="comment-card">
-  <p><strong>작성자:</strong> <span th:text="${comment.user.nickname}">Commenter Nickname</span></p>
+  <p><strong>작성내용: </strong></p>
   <p th:text="${comment.content}">Comment content</p>
-  <p th:text="${comment.writedDate}">Comment date</p>
+  <p><strong>날짜: </strong><span th:text="${comment.writedDate}">Comment date</span></p>
   <form th:action="@{/used-transaction/reportComment}" method="post">
     <input type="hidden" name="commentId" th:value="${comment.commentID}" />
     <button type="submit">댓글 신고</button>

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>All Posts</title>
-    <link rel="stylesheet" th:href="@{/css/usedTransactionPost/usedTransaction.css}"/>
+    <link rel="stylesheet" th:href="@{/euntaek-css/usedTransactionPost/usedTransaction.css}"/>
 <!--    Toastr 라이브러리 추가-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <!--    제이쿼리 라이브러리 추가-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script th:src="@{/js/card-hover-effect.js}"></script>
+    <script th:src="@{/euntaek-js/card-hover-effect.js}"></script>
 </head>
 <body>
     <h1>띵지마켓</h1>
@@ -37,14 +37,11 @@
             <img th:if="${post.pictureBase64}" th:src="'data:image/jpeg;base64,' + ${post.pictureBase64}" alt="Post Image"/>
             <img th:unless="${post.pictureBase64}" th:src="@{/images/default-image.jpg}" alt="Default Image"/>
             <h2 th:text="${post.title}">Post Title</h2>
-            <!--            <p th:text="${post.price}">Post Price</p>-->
-            <p>작성자: <span th:text="${post.userNickname}"></span></p>
+            <p><strong>가격:</strong><span th:text="${post.price}">Post Price</span></p>
         </div>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
     <script th:inline="javascript">
         /*<![CDATA[*/
         $(document).ready(function() {
