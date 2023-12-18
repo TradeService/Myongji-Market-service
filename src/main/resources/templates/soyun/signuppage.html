@@ -5,51 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>띵지마켓</title>
-    <!-- <link rel="stylesheet" type="text/css" th:href="@{/login/loginpage.css}" /> -->
     <link rel="stylesheet" href="../../static/styles-soyun/signuppage.css">
+    <!--    thymeleaf용-->
+    <link th:href="@{/styles-soyun/signuppage.css}" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="main_container">
+    <form class="main_container" action="/signup" method="post">
         <h1><b>띵지</b>마켓</h1>
         <div class="input_container">
             <div class="icon_container">
-                <img class="icon" src="../../static/images-soyun/icon_person.png" alt="아이디">
+                
+                <img class="icon" th:src="@{/images-soyun/icon_person.png}" alt="아이디">
             </div>
-            <input class="input" type="text" placeholder="아이디">
+            <input class="input" name="nickname" type="text" placeholder="닉네임">
         </div>
         <div class="input_container">
             <div class="icon_container">
-                <img class="icon" src="../../static/images-soyun/icon_password.png" alt="비밀번호">
+                <img class="icon" th:src="@{/images-soyun/icon_person.png}" alt="이름">
             </div>
-            <input class="input" type="password" placeholder="비밀번호">
+            <input class="input" name="name" type="text" placeholder="이름">
         </div>
         <div class="input_container">
             <div class="icon_container">
-                <img class="icon" src="../../static/images-soyun/icon_password.png" alt="비밀번호확인">
+                <img class="icon" th:src="@{/images-soyun/icon_password.png}" alt="비밀번호">
             </div>
-            <input class="input" type="password" placeholder="비밀번호 재확인">
+            <input class="input" name="password" type="password" placeholder="비밀번호">
         </div>
+        
         <div class="input_container">
             <div class="icon_container">
-                <img class="icon mail" src="../../static/images-soyun/icon_mail.png" alt="이메일"> 
+                <img class="icon mail" th:src="@{/images-soyun/icon_mail.png}" alt="이메일"> 
             </div>
-            <input class="input" type="text" placeholder="학교 이메일 주소"> 
+            <input class="input" name="email" type="text" placeholder="학교 이메일 주소"> 
             <!-- <button class="button checkBtn" id="send_check_mail">인증번호 받기</button> -->
         </div>
         <div class="button_container">
-            <input class="button" type="submit" value="인증번호 받기">
+            <button class="button">인증번호 받기</button>
         </div>
         <div class="input_container">
             <div class="icon_container">
-                <img class="icon" src="../../static/images-soyun/icon_check.png" alt="비밀번호">
+                <img class="icon" th:src="@{/images-soyun/icon_check.png}" alt="인증번호">
             </div>
             <input class="input" type="text" placeholder="인증번호 입력">
         </div>
         <div class="button_container">
             <input class="button" type="submit" value="회원가입">
         </div>
-    </div>
+    </form>
 
 </body>
 

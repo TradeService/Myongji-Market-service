@@ -17,15 +17,15 @@
         <form action="/login" method="post">
             <div class="input_container">
                 <div class="icon_container">
-                    <img class="icon" src="../../static/images-soyun/icon_person.png" alt="아이디">
+                    <img class="icon" th:src="@{/images-soyun/icon_person.png}" alt="아이디">
                 </div>
-                <input class="input" name="userId" type="text" placeholder="아이디">
+                <input class="input" name="nickname" type="text" placeholder="닉네임">
             </div>
             <div class="input_container">
                 <div class="icon_container">
-                    <img class="icon" src="../../static/images-soyun/icon_password.png" alt="비밀번호">
+                    <img class="icon" th:src="@{/images-soyun/icon_password.png}" alt="비밀번호">
                 </div>
-                <input class="input" name="userPassword" type="password" placeholder="비밀번호">
+                <input class="input" name="password" type="password" placeholder="비밀번호">
             </div>
             <div class="button_container">
                 <div th:if="${error != null}" style="color:red;">
