@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Page</title>
+    <link rel="stylesheet" th:href="@{/euntaek-css/managerPage/managePage.css}" />
+</head>
+<body>
+<h1>띵지마켓</h1>
+<div class="navbar">
+    <a class="nav-button" href="/used-transaction">중고거래</a>
+    <a class="nav-button" href="/used-transaction">재능기부</a>
+    <a class="nav-button" href="/used-transaction">공동구매</a>
+</div>
+<h1>관리자 페이지</h1>
+<h1>Reported Posts</h1>
+<div class="card-container">
+    <div th:each="post : ${reportedPosts}" class="card">
+        <p><strong>신고된 게시글 번호: </strong><span th:text="${post.postId}"></span></p>
+        <p><strong>제목: </strong><span th:text="${post.title}"></span></p>
+        <p><strong>신고된 날짜: </strong><span th:text="${post.createdAt}"></span></p>
+        <p><strong>신고 수: </strong><span th:text="${post.reportCount}"></span></p>
+        <form th:action="@{/manager/deletePost(postId=${post.postId})}" method="post">
+            <button type="submit">Delete Post</button>
+        </form>
+    </div>
+</div>
+<h1>Reported Comments</h1>
+<div class="card-container">
+    <div th:each="comment : ${reportedComments}" class="card">
+        <p><strong>신고된 댓글 id: </strong><span th:text="${comment.commentId}"></span></p>
+        <p><strong>댓글 내용: </strong><span th:text="${comment.content}"></span></p>
+        <p><strong>신고된 날짜: </strong><span th:text="${comment.createdAt}"></span></p>
+        <p><strong>신고된 수: </strong><span th:text="${comment.reportCount}"></span></p>
+        <form th:action="@{/manager/deleteComment(commentId=${comment.commentId})}" method="post">
+            <button type="submit">Delete Comment</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

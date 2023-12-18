@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Post Details</title>
+  <link rel="stylesheet" th:href="@{/euntaek-css/usedTransactionPost/usedTransactionDetail.css}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+<h1>띵지마켓</h1>
+<div class="navbar">
+  <a class="nav-button" href="/used-transaction">중고거래</a>
+  <a class="nav-button" href="/used-transaction">재능기부</a>
+  <a class="nav-button" href="/used-transaction">공동구매</a>
+</div>
+<div class="card">
+  <div>
+    <a th:href="@{/used-transaction/edit(id=${post.id})}">수정하기</a>
+    <a th:href="@{/used-transaction/delete(id=${post.id})}" onclick="return confirm('Are you sure you want to delete this post?')">삭제하기</a>
+  </div>
+  <p><strong>제목: </strong><span th:text="${post.title}">Title</span></p>
+  <div>
+    <img th:if="${post.pictureBase64}" th:src="'data:image/jpeg;base64,' + ${post.pictureBase64}" alt="Post Image"/>
+    <img th:unless="${post.pictureBase64}" th:src="@{/images/default-image.jpg}" alt="Default Image" />
+  </div>
+  <div class="user-report">
+  <form th:action="@{/used-transaction/reportPost}" method="post">
+    <input type="hidden" name="postId" th:value="${post.id}" />
+    <button type="submit">게시글 신고</button>
+  </form>
+  </div>
+
+  <div class="details-container">
+    <p><strong>내용:</strong> <span th:text="${post.content}">Content</span></p>
+    <p><strong>카테고리:</strong> <span th:text="${post.topic}">Topic</span></p>
+    <p><strong>가격:</strong> <span th:text="${post.price}">Price</span></p>
+    <p><strong>장소:</strong> <span th:text="${post.place}">Place</span></p>
+    <p><strong>작성일:</strong> <span th:text="${post.createdAt}">Created At</span></p>
+    <p><strong>수정일:</strong> <span th:text="${post.updatedAt}">Updated At</span></p>
+    <p><strong>좋아요:</strong> <span th:text="${post.heart}">Heart</span></p>
+  </div>
+
+  <div class="heart-comment-rap-container">
+    <div class="heart-comment-container">
+      <div class="heart-make-container">
+        <form th:action="@{/used-transaction/like}" method="post">
+          <input type="hidden" name="postId" th:value="${post.id}" />
+          <button type="submit" class="heart-button">
+            <i class="fas fa-heart"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="comment-make-container">
+      <h3>댓글</h3>
+      <form th:action="@{/used-transaction/addComment}" method="post">
+        <input type="hidden" name="postId" th:value="${post.id}" />
+        <textarea name="content" placeholder="Write a comment..."></textarea>
+        <button type="submit">작성</button>
+      </form>
+    </div>
+  </div>
+  </div>
+</div>
+<div id="comment-container" th:each="comment : ${post.comments}" class="comment-card">
+  <p><strong>작성내용: </strong></p>
+  <p th:text="${comment.content}">Comment content</p>
+  <p><strong>날짜: </strong><span th:text="${comment.writedDate}">Comment date</span></p>
+  <form th:action="@{/used-transaction/reportComment}" method="post">
+    <input type="hidden" name="commentId" th:value="${comment.commentID}" />
+    <button type="submit">댓글 신고</button>
+  </form>
+</div>
+</body>
+</html>
