@@ -11,15 +11,18 @@ public class LoginController {
     private LoginService loginService;
     //http://localhost:8080/post
     // GET /login
-    @GetMapping()
-    public ModelAndView sampleThyme(){
+    @GetMapping("")
+    public ModelAndView getLoginPage(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("soyun/loginpage");
         return modelAndView;
     }
     @PostMapping("")
-    public ModelAndView getLogin(@RequestParam String userId, @RequestParam String userPassword){
-        boolean isAuthenticated = loginService.authenticate(userId, userPassword);
+    public ModelAndView getLogin(
+            @RequestParam("nickname") String nickname,
+            @RequestParam("password") String password
+    ){
+        boolean isAuthenticated = loginService.authenticate(nickname, password);
         ModelAndView modelAndView = new ModelAndView();
         if(isAuthenticated){
             modelAndView.setViewName("soyun/mypage");
