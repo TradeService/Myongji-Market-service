@@ -6,9 +6,10 @@
 </head>
 <body>
 <h1>New Post</h1>
-<form th:action="@{/posts}" th:object="${post}" method="post">
+<form th:action="@{/posts}" th:object="${post}" method="post" enctype="multipart/form-data">
     <input type="text" th:field="*{title}" placeholder="Title"/>
     <textarea th:field="*{content}" placeholder="Content"></textarea>
+    <input type="file" name="image"/>
     <input type="submit" value="Create"/>
 </form>
 </body>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Page</title>
+    <link rel="stylesheet" th:href="@{/css/managerPage/managePage.css}" />
+</head>
+<body>
+<h1>띵지마켓</h1>
+<div class="navbar">
+    <a class="nav-button" href="/usedTransactionPost">중고거래</a>
+    <a class="nav-button" href="/usedTransactionPost">재능기부</a>
+    <a class="nav-button" href="/usedTransactionPost">공동구매</a>
+</div>
+<h1>관리자 페이지</h1>
+
+<h1>Reported Posts</h1>
+<div class="card-container">
+    <div th:each="post : ${reportedPosts}" class="card">
+        <span th:text="'ID: ' + ${post.postId}"></span>
+        <span th:text="'Title: ' + ${post.title}"></span>
+        <span th:text="'Created at: ' + ${post.createdAt}"></span>
+        <span th:text="'Reports: ' + ${post.reportCount}"></span>
+        <form th:action="@{/manager/deletePost(postId=${post.postId})}" method="post">
+            <button type="submit">Delete Post</button>
+        </form>
+    </div>
+</div>
+<h1>Reported Comments</h1>
+<div class="card-container">
+    <div th:each="comment : ${reportedComments}" class="card">
+        <span th:text="'Comment ID: ' + ${comment.commentId}"></span>
+        <span th:text="'Content: ' + ${comment.content}"></span>
+        <span th:text="'Created at: ' + ${comment.createdAt}"></span>
+        <span th:text="'Reports: ' + ${comment.reportCount}"></span>
+        <form th:action="@{/manager/deleteComment(commentId=${comment.commentId})}" method="post">
+            <button type="submit">Delete Comment</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,10 +1,7 @@
 package com.example.myongjimarket.domain.Post;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,5 +18,8 @@ public class Post {
     private Long id;
     private String title;
     private String content;
+
+    @Lob
+    private byte[] image;
 }
 

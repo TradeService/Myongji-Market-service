@@ -6,9 +6,13 @@
 </head>
 <body>
 <h1>Edit Post</h1>
-<form th:action="@{/posts/{id}(id=${post.id})}" th:object="${post}" method="post">
+<form th:action="@{/posts/{id}(id=${post.id})}" th:object="${post}" method="post" enctype="multipart/form-data">
   <input type="text" th:field="*{title}" placeholder="Title"/>
   <textarea th:field="*{content}" placeholder="Content"></textarea>
+  <div th:if="${image}">
+    <img width="300px" th:src="'data:image/jpeg;base64,' + ${image}" alt="Post Image"/>
+  </div>
+  <input type="file" name="image"/>
   <input type="submit" value="Update"/>
 </form>
 </body>
