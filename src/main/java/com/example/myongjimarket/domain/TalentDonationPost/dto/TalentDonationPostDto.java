@@ -23,15 +23,13 @@ public class TalentDonationPostDto {
     private LocalDateTime updated_at;
     private String person;
     private String plan;
-    private Long UserID;
 
     public TalentDonationPostDto() {
         this.created_at = LocalDateTime.now();
         this.updated_at = LocalDateTime.now();
-        this.UserID = 1L; // UserID 기본값으로 설정
     }
 
-    public TalentDonationPostDto(Long id, String title, String content, String topic, byte[] picture, String place, LocalDateTime created_at, LocalDateTime updated_at, String person, String plan, Long UserID) {
+    public TalentDonationPostDto(Long id, String title, String content, String topic, byte[] picture, String place, LocalDateTime created_at, LocalDateTime updated_at, String person, String plan) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -42,8 +40,21 @@ public class TalentDonationPostDto {
         this.updated_at = updated_at;
         this.person = person;
         this.plan = plan;
-        this.UserID = UserID;
     }
+
+    public TalentDonationPostDto(TalentDonationPost post) {
+        this.id = post.getId();
+        this.title = post.getTitle();
+        this.content = post.getContent();
+        this.topic = post.getTopic();
+        this.picture = post.getPicture();
+        this.place = post.getPlace();
+        this.created_at = post.getCreated_at();
+        this.updated_at = post.getUpdated_at();
+        this.person = post.getPerson();
+        this.plan = post.getPlan();
+    }
+
 
     public List<TalentDonationPostDto> convertToDtoList(List<TalentDonationPost> entityList) {
         return entityList.stream()
@@ -68,8 +79,7 @@ public class TalentDonationPostDto {
                 entity.getCreated_at(),
                 entity.getUpdated_at(),
                 entity.getPerson(),
-                entity.getPlan(),
-                entity.getUserID()
+                entity.getPlan()
         );
     }
 
@@ -84,8 +94,7 @@ public class TalentDonationPostDto {
                 dto.getCreated_at(),
                 dto.getUpdated_at(),
                 dto.getPerson(),
-                dto.getPlan(),
-                dto.getUserID()
+                dto.getPlan()
         );
     }
 }

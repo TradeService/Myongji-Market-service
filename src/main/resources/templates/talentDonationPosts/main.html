@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Posts</title>
+</head>
+<body>
+<h1>Posts</h1>
+<a href="/talent-transaction/new">
+    <button>add post</button>
+</a>
+<div th:each="post : ${posts}">
+    <h3 th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.title}">Post Title</h3>
+    <p th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.content}">Post Content</p>
+    <p th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.picture}">Post Picture</p>
+    <p th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.place}">Post Place</p>
+    <p th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.created_at}">Post created_at</p>
+    <p th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.updated_at}">Post updated_at</p>
+    <p th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.person}">Post Person</p>
+    <p th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.plan}">Post Plan</p>
+    <a th:href="@{/talent-transaction/post(id=${post.id})}">show detail</a>
+    <a th:href="@{/talent-transaction/update(id=${post.id})}">update</a>
+    <a th:href="@{/talent-transaction/delete(id=${post.id})}">delete</a>
+</div>
+</body>
+</html>

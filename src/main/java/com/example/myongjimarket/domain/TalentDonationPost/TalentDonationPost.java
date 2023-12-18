@@ -30,5 +30,4 @@ public class TalentDonationPost {
     private LocalDateTime updated_at;
     private String person;
     private String plan;
-    private Long UserID;
 }

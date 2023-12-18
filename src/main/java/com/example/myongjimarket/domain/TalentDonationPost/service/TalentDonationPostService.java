@@ -6,47 +6,45 @@ import com.example.myongjimarket.domain.TalentDonationPost.repository.TalentDona
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class TalentDonationPostService {
-
     @Autowired
     TalentDonationPostRepository talentDonationPostRepository;
 
     @Autowired
     TalentDonationPostDto talentDonationPostDto;
 
-    public Optional<TalentDonationPostDto> getPostById(Long id) {
-        return talentDonationPostRepository.findById(id).map(talentDonationPostDto::convertToDto);
-    }
+    public TalentDonationPostDto getPostById(Long id) {
+        return new TalentDonationPostDto (talentDonationPostRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("no id")));    }
 
     public List<TalentDonationPostDto> getAllPosts() {
-        List<TalentDonationPost> allPosts = talentDonationPostRepository.findAll();
-        return talentDonationPostDto.convertToDtoList(allPosts);
+        List<TalentDonationPost> posts = talentDonationPostRepository.findAll();
+        return talentDonationPostDto.convertToDtoList(posts);
     }
 
-    public TalentDonationPostDto addNewPost(TalentDonationPostDto newPostDto) {
+    public TalentDonationPostDto saveNewPost(TalentDonationPostDto newPostDto) {
         TalentDonationPost newPost = talentDonationPostDto.convertToEntity(newPostDto);
         TalentDonationPost savedPost = talentDonationPostRepository.save(newPost);
         return talentDonationPostDto.convertToDto(savedPost);
     }
 
-    public void updatePost(Long id, TalentDonationPostDto updatedPostDto) {
-        talentDonationPostRepository.findById(id).ifPresent(post -> {
-            post.setTitle(updatedPostDto.getTitle());
-            post.setContent(updatedPostDto.getContent());
-            post.setTopic(updatedPostDto.getTopic());
-            post.setPicture(updatedPostDto.getPicture());
-            post.setPlace(updatedPostDto.getPlace());
-            post.setCreated_at(updatedPostDto.getCreated_at());
-            post.setUpdated_at(updatedPostDto.getUpdated_at());
-            post.setPerson(updatedPostDto.getPerson());
-            post.setPlan(updatedPostDto.getPlan());
-
-            talentDonationPostRepository.save(post);
-        });
+    public void updatePost(TalentDonationPostDto updatedPostDto) {
+        Optional<TalentDonationPost> talentDonationPostDto1=talentDonationPostRepository.findById(updatedPostDto.getId());
+        TalentDonationPost newpost = talentDonationPostDto1.get();
+        newpost.setTitle(updatedPostDto.getTitle());
+        newpost.setContent(updatedPostDto.getContent());
+        newpost.setTopic(updatedPostDto.getTopic());
+        newpost.setPicture(updatedPostDto.getPicture());
+        newpost.setPlace(updatedPostDto.getPlace());
+        newpost.setUpdated_at(LocalDateTime.now());
+        newpost.setPerson(updatedPostDto.getPerson());
+        newpost.setPlan(updatedPostDto.getPlan());
+        talentDonationPostRepository.save(newpost);
     }
 
     public void deletePost(Long postId) {
