@@ -1,0 +1,145 @@
+body {
+  /* self */
+  background-color: #ededed;
+
+  /* item */
+  display: flex;
+  justify-content: center;
+  margin-top: 157px;
+}
+
+.main_container {
+  /* self */
+  width: 626px;
+  height: 750px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  border: 3px solid var(--Navy, #023059);
+  background: #ededed;
+  padding-top: 82px;
+  /* item */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  /* self */
+  color: #023059;
+  font-family: Inter;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 0px;
+}
+.input_container {
+  /* self */
+  background-color: #dfdfdf;
+  width: 447px;
+  height: 34.011px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  /* item */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+.input_container:focus-within {
+  border: 3px solid var(--Navy, #023059);
+}
+.icon_container {
+  /* self */
+  width: 20%;
+  /* item */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  height: 40px;
+}
+.mail {
+  height: 25px;
+}
+.input {
+  /* self */
+  background-color: #dfdfdf;
+  width: 80%;
+  font-size: 24px;
+  border: none;
+}
+
+.input:focus {
+  outline: none;
+}
+.input-btn-container {
+  display: flex;
+}
+#send_check_mail {
+  width: 125px;
+  height: 40px;
+  flex-shrink: 0;
+  color: #e2e2e2;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.523%; /* 13.204px */
+  letter-spacing: 0.64px;
+}
+.button {
+  /* self */
+  background-color: #023059;
+  color: #e2e2e2;
+  width: 447px;
+  height: 59.924px;
+  font-size: 24px;
+  border: none;
+  border-radius: 10px;
+}
+.button_container {
+  /* self */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* item */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.button {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  cursor: pointer;
+}
+.button:active {
+  background-color: #031627;
+  color: #c1c1c1;
+}
+a {
+  color: #422e17;
+  margin: 10px;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+a:link {
+  color: #422e17;
+}
+a:visited {
+  color: #422e17;
+}
+a:hover {
+  color: #422e17;
+}
+a:active {
+  color: #422e17;
+}
