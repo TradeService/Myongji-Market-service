@@ -1,7 +1,6 @@
 package com.example.myongjimarket.domain.Report;
 
 import com.example.myongjimarket.domain.UsedTransactionPost.UsedTransactionPost;
-import com.example.myongjimarket.domain.User.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

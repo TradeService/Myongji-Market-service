@@ -3,8 +3,6 @@ import com.example.myongjimarket.domain.UTPComment.UTPComment;
 import com.example.myongjimarket.domain.UTPComment.repository.CommentRepository;
 import com.example.myongjimarket.domain.UsedTransactionPost.UsedTransactionPost;
 import com.example.myongjimarket.domain.UsedTransactionPost.repository.UTPRepository;
-import com.example.myongjimarket.domain.User.User;
-import com.example.myongjimarket.domain.User.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 @Service
