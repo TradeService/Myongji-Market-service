@@ -12,10 +12,11 @@ public class SignupService {
 
     public User registerNewUser(UserDto userDto) {
         User newUser = new User(
-                userDto.getNickname(),
                 userDto.getName(),
-                userDto.getPassword(),
-                userDto.getEmail());
+                userDto.getNickname(),
+                userDto.getProfileImageURL(),
+                userDto.getEmail(),
+                userDto.getPassword());
         return signupRepository.save(newUser);
     }
 }

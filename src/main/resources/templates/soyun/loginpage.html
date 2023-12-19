@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>띵지마켓</title>
-<!--    html용-->
-   <link rel="stylesheet" href="../../static/styles-soyun/loginpage.css">
-<!--    thymeleaf용-->
+    <!--    html용-->
+    <link rel="stylesheet" href="../../static/styles-soyun/loginpage.css">
+    <!--    thymeleaf용-->
     <link th:href="@{/styles-soyun/loginpage.css}" rel="stylesheet" />
 </head>
 
 <body>
     <div class="main_container">
-        <h1><b>띵지</b>마켓</h1>
-        <form action="/login" method="post">
+        <a href="/">
+            <h1><b>명지</b>마켓</h1>
+        </a>
+        <form action="/login" method="post" class="form_container">
             <div class="input_container">
                 <div class="icon_container">
                     <img class="icon" th:src="@{/images-soyun/icon_person.png}" alt="아이디">
@@ -27,19 +29,37 @@
                 </div>
                 <input class="input" name="password" type="password" placeholder="비밀번호">
             </div>
-            <div class="button_container">
-                <div th:if="${error != null}" style="color:red;">
-                    아이디 또는 비밀번호를 다시 입력해주세요.
-                </div>
-                <input class="button" type="submit" value="로그인">
-                <button class="button">회원가입</button>
+            <div id="customModal" style="display:none;">
+                <p>잘못된 닉네임 또는 비밀번호입니다.</p>
             </div>
+            <div class="button_container"></div>
+            <input class="button" type="submit" value="로그인">
         </form>
-        
+        <form action="/signup"><input class="button" type="submit" value="회원가입"></input></form>
         <a href="">아이디/비밀번호 찾기</a>
-        
     </div>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loginForm = document.querySelector('form');
+            loginForm.addEventListener('submit', function (event) {
+                const nickname = loginForm.elements['nickname'].value;
+                const password = loginForm.elements['password'].value;
+                if (!isValidNickname(nickname) || !isValidPassword(password)) {
+                    event.preventDefault();
+                    showModal();
+                }
+            });
+        });
+        function isValidNickname(nickname) {
+            return !(/[가-힣]/.test(nickname) || nickname.length >= 11 || /[^a-zA-Z0-9!@_]/.test(nickname) || (nickname.length == 0));
+        }
+        function isValidPassword(password) {
+            return !(password.length >= 15 || /[^a-zA-Z0-9!@_]/.test(password) || (nickname.length == 0));
+        }
+        function showModal() {
+            document.getElementById('customModal').style.display = 'block';
+        }
+    </script>
 </body>
 
 </html>

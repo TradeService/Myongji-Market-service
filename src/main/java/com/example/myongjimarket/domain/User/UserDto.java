@@ -1,6 +1,12 @@
 package com.example.myongjimarket.domain.User;
 
 public class UserDto {
+    private String UserID;
+    private String Name;
+    private String Nickname;
+    private String ProfileImageURL;
+    private String Email;
+    private String password;
     public String getUserID() {
         return UserID;
     }
@@ -24,7 +30,8 @@ public class UserDto {
     public void setNickname(String nickname) {
         Nickname = nickname;
     }
-
+    public String getProfileImageURL(){return ProfileImageURL;}
+    public void setProfileImageURL(String profileImageURL){ProfileImageURL =profileImageURL; }
     public String getEmail() {
         return Email;
     }
@@ -46,31 +53,19 @@ public class UserDto {
         return "UserDto{" +
                 "UserID='" + UserID + '\'' +
                 ", Name='" + Name + '\'' +
-                ", NickName='" + Nickname + '\'' +
+                ", Nickname='" + Nickname + '\'' +
+                ", ProfileImageURL='" + ProfileImageURL + '\'' +
                 ", Email='" + Email + '\'' +
-                ", Password='" + password + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
-
-    private String UserID;
-    private String Name;
-    private String Nickname;
-    private String Email;
-    private String password;
-
-    public UserDto(String userID, String name, String nickname, String email, String password) {
-        UserID = userID;
-        Name = name;
-        Nickname = nickname;
-        Email = email;
+    public UserDto(String name, String nickname, String profileImageURL, String email,String password) {
+        this.Name=name;
+        this.Nickname = nickname;
+        this.ProfileImageURL = profileImageURL;
         this.password = password;
-    }
-    public UserDto(String nickname,String name, String password, String email) {
+        this.Email = email;
 
-        Nickname = nickname;
-        this.password = password;
-        Email = email;
-        Name=name;
 
     }
 
