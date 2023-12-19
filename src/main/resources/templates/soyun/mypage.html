@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../static/styles-soyun/mypage.css">
     <!--    thymeleaf용-->
     <link th:href="@{/styles-soyun/mypage.css}" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -31,23 +32,22 @@
     <main class="center">
         <section class="modify_info_container">
             <h2>마이페이지</h2>
-            <form action="">
+            <form action="/profile" method="post" enctype="multipart/form-data">
                 <div class="section1">
                     <div class="left-top">
-                        <button class="profile-img" onclick="onClickUpload();"">
-                        <img src=" https://i.pinimg.com/236x/47/4f/fd/474ffd268f1479de12a2db881bf36e2b.jpg"
-                            alt="프로필 선택">
+                        <button type="button" class="profile-img" onclick="onClickUpload();">        
+                        <img th:src="${user.profileImageURL} ? @{'D:/mju-web-programming/downloadsProfiles/' + ${user.profileImageURL}} : @{/profileImgs-soyun/image.jpg}" alt="프로필 선택">
                         </button>
-                        <input type="file" id="choose-profile-image" style="display: none;">
+                        <input type="file" id="choose-profile-image" name ="profileImageURL"style="display: none;">
                         <div>
                             <p>비밀번호</p>
-                            <input class="input-password" type="password" placeholder="비밀번호">
+                            <input class="input-password" type="password" name="password" placeholder="비밀번호">
                         </div>
                     </div>
                     <div class="right-top">
                         <div>
                             <p>닉네임</p>
-                            <input type="text" th:value="${user.nickname}" readonly>
+                            <input type="text" th:value="${user.nickname}" name="nickname "readonly>
                         </div>
 
                         <div>
@@ -61,7 +61,7 @@
                         </div>
                         <div>
                             <p>비밀번호 재확인</p>
-                            <input type=" password" placeholder="비밀번호 재확인">
+                            <input type="password" placeholder="비밀번호 재확인">
                         </div>
                     </div>
                 </div>
