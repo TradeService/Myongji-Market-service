@@ -300,9 +300,42 @@ ul {
 }
 li > a {
     color: #000;
-    font-family: Inter;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+.card-content {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.card-content h2 {
+    color: #023059;
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+}
+
+.card-content ul {
+    list-style-type: circle;
+    margin-left: 20px;
+}
+
+.card-content li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #555555;
+}
+
+.inner-content{
+    display: flex;
 }
