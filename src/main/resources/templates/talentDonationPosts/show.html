@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" th:href="@{/talentDonationPost/talentDonationShow.css}" />
     <meta charset="UTF-8">
     <title>Post Details</title>
 </head>
 <body>
-<h1>Post Details</h1>
-<div>
-    <p><strong>Title:</strong> <span th:text="${post.title}">Post Title</span></p>
-    <p><strong>Content:</strong> <span th:text="${post.content}">Post Content</span></p>
-    <p><strong>Picture:</strong> <span th:text="${post.picture}">Post Picture</span></p>
-    <p><strong>Place:</strong> <span th:text="${post.place}">Post Place</span></p>
-    <p><strong>Created At:</strong> <span th:text="${post.created_at}">Post Created At</span></p>
-    <p><strong>Updated At:</strong> <span th:text="${post.updated_at}">Post Updated At</span></p>
-    <p><strong>Person:</strong> <span th:text="${post.person}">Post Person</span></p>
-    <p><strong>Plan:</strong> <span th:text="${post.plan}">Post Plan</span></p>
-</div>
-<div>
-    <a href="/talent-transaction">Back to All Posts</a>
-</div>
+<header class="center">
+    <a href="/"><h1><b>명지</b>마켓</h1></a>
+    <div class="user-profile">
+        <a href="/profile?nickname=soyun">내 정보</a>
+    </div>
+</header>
+<nav>
+    <ul class="center">
+        <li><a href="/used-transaction">중고거래</a></li>
+        <li><a href="/talent-transaction">재능기부</a></li>
+        <li><a href="/group-transaction">공동구매</a></li>
+    </ul>
+</nav>
+<article class="outer-container">
+    <div class="container-title">
+        <h2>재능기부 게시글 상세보기</h2>
+    </div>
+    <div class="outer-detail-container">
+        <div class="form-container">
+            <div class="detail-container">
+                <p><strong class="detail-name">제목:</strong> <span class="input-text" th:text="${post.title}">Post Title</span></p>
+                <p><strong class="detail-name">종류: </strong> <span class="input-text" th:text="${post.topic}">Post Topic</span></p>
+                <p ><strong class="detail-name">설명: </strong> <span class="input-text" th:text="${post.content}">Post Content</span></p>
+                <p><strong class="detail-name">장소: </strong> <span class="input-text" th:text="${post.place}">Post Place</span></p>
+                <p><strong class="detail-name">작성 시간: </strong> <span class="input-text" th:text="${post.created_at}">Post Created At</span></p>
+                <p><strong class="detail-name">수정 시간: </strong> <span class="input-text" th:text="${post.updated_at}">Post Updated At</span></p>
+                <p><strong class="detail-name">인원: </strong> <span class="input-text" th:text="${post.person}">Post Person</span></p>
+                <p><strong class="detail-name">일정: </strong> <span class="input-text" th:text="${post.plan}">Post Plan</span></p>
+            </div>
+        </div>
+        <button class="link-btn">
+            <a th:href="@{/talent-transaction/update(id=${post.id})}">수정하기</a>
+        </button>
+        <button class="link-btn">
+            <a th:href="@{/talent-transaction/delete(id=${post.id})}">삭제하기</a>
+        </button>
+        <button>
+            <a href="/talent-transaction">돌아가기</a>
+        </button>
+    </div>
+</article>
+<!--<div>-->
+<!--    <p><strong>Title:</strong> <span th:text="${post.title}">Post Title</span></p>-->
+<!--    <p><strong>Content:</strong> <span th:text="${post.content}">Post Content</span></p>-->
+<!--    <p><strong>Picture:</strong> <span th:text="${post.picture}">Post Picture</span></p>-->
+<!--    <p><strong>Place:</strong> <span th:text="${post.place}">Post Place</span></p>-->
+<!--    <p><strong>Created At:</strong> <span th:text="${post.created_at}">Post Created At</span></p>-->
+<!--    <p><strong>Updated At:</strong> <span th:text="${post.updated_at}">Post Updated At</span></p>-->
+<!--    <p><strong>Person:</strong> <span th:text="${post.person}">Post Person</span></p>-->
+<!--    <p><strong>Plan:</strong> <span th:text="${post.plan}">Post Plan</span></p>-->
+<!--</div>-->
+<!--<div>-->
+<!--    <a href="/talent-transaction">Back to All Posts</a>-->
+<!--</div>-->
 </body>
 </html>

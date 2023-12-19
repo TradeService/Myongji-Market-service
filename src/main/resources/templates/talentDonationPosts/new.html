@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+  <link rel="stylesheet" th:href="@{/talentDonationPost/talentDonationNew.css}" />
   <meta charset="UTF-8">
-  <title>Add New Post</title>
+  <title>New Post</title>
 </head>
 <body>
-<h1>Add New Post</h1>
-<form th:action="@{/talent-transaction/save}" th:object="${newPost}" method="post">
-  <p>Title: <input type="text" th:field="*{title}" /></p>
-  <p>Content: <input type="text" th:field="*{content}" /></p>
-  <p>Topic: <input type="text" th:field="*{topic}" /></p>
-  <p>Place: <input type="text" th:field="*{place}" /></p>
-  <p>Person: <input type="text" th:field="*{person}" /></p>
-  <p>Plan: <input type="text" th:field="*{plan}" /></p>
-  <p>Picture: <input type="text" th:field="*{picture}" /></p>
-  <p><button type="submit">Submit</button></p>
-</form>
-<div>
-  <a href="/talent-transaction">Back to All Posts</a>
-</div>
+<header class="center">
+  <a href="/"><h1><b>명지</b>마켓</h1></a>
+  <div class="user-profile">
+    <a href="/profile?nickname=soyun">내 정보</a>
+  </div>
+</header>
+<nav>
+  <ul class="center">
+    <li><a href="/used-transaction">중고거래</a></li>
+    <li><a href="/talent-transaction">재능기부</a></li>
+    <li><a href="/group-transaction">공동구매</a></li>
+  </ul>
+</nav>
+<article>
+  <div class="body-container">
+    <div class="body-title">
+      <h2>재능기부 신청서</h2>
+    </div>
+    <div class="form-container">
+      <form class="form-inputs-container" th:action="@{/talent-transaction/save}" th:object="${newPost}" method="post">
+          <p class="input-name">제목: <input class="input-text" type="text" th:field="*{title}"/></p>
+          <p class="input-name">일정: <input class="input-text" type="text" th:field="*{plan}" /></p>
+          <p class="input-name">장소: <input class="input-text" type="text" th:field="*{place}" /></p>
+          <p class="input-name">설명: <input class="input-text" type="text" th:field="*{content}" /></p>
+          <p class="input-name">종류: <input class="input-text" type="text" th:field="*{topic}" /></p>
+          <p class="input-name">인원: <input class="input-text" type="number" th:field="*{person}" /></p>
+          <p class="input-name"><button type="submit">작성하기</button></p>
+      </form>
+    </div>
+  </div>
+</article>
+<!--<h1>Add New Post</h1>-->
+<!--<form th:action="@{/talent-transaction/save}" th:object="${newPost}" method="post">-->
+<!--  <p>Title: <input type="text" th:field="*{title}" /></p>-->
+<!--  <p>Content: <input type="text" th:field="*{content}" /></p>-->
+<!--  <p>Topic: <input type="text" th:field="*{topic}" /></p>-->
+<!--  <p>Place: <input type="text" th:field="*{place}" /></p>-->
+<!--  <p>Person: <input type="text" th:field="*{person}" /></p>-->
+<!--  <p>Plan: <input type="text" th:field="*{plan}" /></p>-->
+<!--  <p>Picture: <input type="text" th:field="*{picture}" /></p>-->
+<!--  <p><button type="submit">Submit</button></p>-->
+<!--</form>-->
+<!--<div>-->
+<!--  <a href="/talent-transaction">Back to All Posts</a>-->
+<!--</div>-->
 </body>
 </html>
