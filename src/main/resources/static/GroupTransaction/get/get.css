@@ -1,0 +1,152 @@
+header>.center {
+    width: 810px;
+}
+nav>.center {
+    width: 810px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+button {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    color: black;
+    width: 250px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 25px;
+}
+h1 {
+    color: #000;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+h1>b {
+    color: #023059;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.user-profile {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #000;
+}
+a:visited {
+    color: #000;
+}
+a:hover {
+    color: #000;
+}
+a:active {
+    color: #000;
+}
+nav {
+    width: 100%;
+    margin: 0px;
+    height: 85px;
+    flex-shrink: 0;
+    background: #7c8fa4;
+    display: flex;
+    justify-content: center;
+}
+nav>ul {
+    /* self */
+    list-style: none;
+    /* item */
+    display: flex;
+    padding-left: 41px;
+    padding-right: 41px;
+    justify-content: space-between;
+    align-items: center;
+
+    width: min-content;
+}
+nav>ul>li > a {
+    color: #000;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 50%; /* Sets the width to take the full container width */
+    height: auto;
+    margin: 30px auto; /* Centers the .details-container */
+    padding: 20px; /* Adds some padding around the content */
+    background-color: #F2F2F2;
+    border-radius: 8px;
+}
+.subContainer{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center; /* Aligns items to the left */
+    width: 80%; /* Sets the width to take the full container width */
+    margin: auto; /* Centers the .details-container */
+    padding: 20px; /* Adds some padding around the content */
+    background-color: #4B6989;
+    border-radius: 18px;
+}
+.productName, .price, .place, .content, .phoneNum{
+    line-height: 50px;
+    margin: 20px 0;
+    width: 600px;
+    height: 50px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 18px;
+    font-size: 35px;
+    text-align: center;
+}
+.title{
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin:10px 0;
+}
+.person{
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 25px;
+    background-color: white;
+    border-radius: 18px;
+    text-align: center;
+}
+.boldtext{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin:10px 20px;
+}
+.buttondiv{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
