@@ -1,0 +1,169 @@
+/*header*/
+header>.center {
+    width: 810px;
+}
+nav>.center {
+    width: 810px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    color: #000;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+h1>b {
+    color: #023059;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.user-profile {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #000;
+}
+a:visited {
+    color: #000;
+}
+a:hover {
+    color: #000;
+}
+a:active {
+    color: #000;
+}
+nav {
+    width: 100%;
+    margin: 0px;
+    height: 85px;
+    flex-shrink: 0;
+    background: #7c8fa4;
+    display: flex;
+    justify-content: center;
+}
+nav>ul {
+    /* self */
+    list-style: none;
+    /* item */
+    display: flex;
+    padding-left: 41px;
+    padding-right: 41px;
+    justify-content: space-between;
+    align-items: center;
+
+    width: min-content;
+}
+nav>ul>li > a {
+    color: #000;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/*body*/
+.container-title {
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+#new-post {
+    width: 150px;
+    height: 40px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    background-color: #F2F2F2;
+    cursor: pointer;
+}
+#new-post:hover {
+    cursor: pointer;
+    background-color: #4B6989;
+    color: white;
+}
+#new-post:active{
+    cursor: pointer;
+    background-color: #F2F2F2;
+    color: black;
+}
+.outer-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-container {
+    width: 70%; /* 컨테이너 너비를 70%로 설정 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    gap: 1rem;
+    margin: 20px 0;
+}
+
+.card {
+    width: calc(30% - 20px); /* 너비 설정, 3개의 카드가 한 줄에 들어가도록 */
+    max-width: calc(30% - 20px);
+    min-height: 300px; /* 카드의 최소 높이 설정 */
+    max-height: 700px;
+    overflow: hidden;
+    flex: 1 1 calc((100% / 4) - 1rem); /* 3개가 한 줄에 보이도록 설정 */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    background-color: #F2F2F2;
+    /*background: #fff;*/
+    transition: transform 0.3s ease;
+}
+.link-btn {
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 15px;
+    outline: none;
+    margin: 10px;
+    cursor: pointer;
+}
+.link-btn:hover {
+    cursor: pointer;
+    background-color: #4B6989;
+    color: white;
+}
+.link-btn:active {
+    cursor: pointer;
+    background-color: #F2F2F2;
+    color: black;
+}
