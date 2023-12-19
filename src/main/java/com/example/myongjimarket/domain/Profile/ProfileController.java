@@ -10,12 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ProfileController {
     @Autowired
     private ProfileService profileService;
-//    @GetMapping()
-//    public ModelAndView getMyPage(){
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("soyun/mypage");
-//        return modelAndView;
-//    }
+
     @GetMapping()
     public ModelAndView getUserProfile(
             @RequestParam("nickname") String nickname

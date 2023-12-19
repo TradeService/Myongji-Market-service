@@ -13,8 +13,10 @@
 
 <body>
     <header class="center">
-        <a href="/"><h1><b>명지</b>마켓</h1></a>
-        
+        <a href="/">
+            <h1><b>명지</b>마켓</h1>
+        </a>
+
         <div class="user-profile">
             <a href="/profile?nickname=soyun">내 정보</a>
         </div>
@@ -29,46 +31,56 @@
     <main class="center">
         <section class="modify_info_container">
             <h2>마이페이지</h2>
-            <div class="section1">
-                <div class="left-top">
-                    <button class="profile-img"><img src="" alt="프로필"></button>
+            <form action="">
+                <div class="section1">
+                    <div class="left-top">
+                        <button class="profile-img" onclick="onClickUpload();"">
+                        <img src=" https://i.pinimg.com/236x/47/4f/fd/474ffd268f1479de12a2db881bf36e2b.jpg"
+                            alt="프로필 선택">
+                        </button>
+                        <input type="file" id="choose-profile-image" style="display: none;">
+                        <div>
+                            <p>비밀번호</p>
+                            <input class="input-password" type="password" placeholder="비밀번호">
+                        </div>
+                    </div>
+                    <div class="right-top">
+                        <div>
+                            <p>닉네임</p>
+                            <input type="text" th:value="${user.nickname}" readonly>
+                        </div>
 
-                    <div>
-                        <p>비밀번호</p>
-                        <input class="input-password" type="password" placeholder="비밀번호">
+                        <div>
+                            <p>이름</p>
+                            <input type=" text" th:value="${user.name}" readonly>
+                        </div>
+
+                        <div>
+                            <p>이메일</p>
+                            <input type="text" th:value="${user.email}" readonly>
+                        </div>
+                        <div>
+                            <p>비밀번호 재확인</p>
+                            <input type=" password" placeholder="비밀번호 재확인">
+                        </div>
                     </div>
                 </div>
-                <div class="right-top">
-                    <div>
-                        <p>닉네임</p>
-                        <input type="text" th:value="${user.nickname}" readonly>
-                    </div>
-
-                    <div>
-                        <p>이름</p>
-                        <input type=" text" th:value="${user.name}" readonly>
-                    </div>
-
-                    <div>
-                        <p>이메일</p>
-                        <input type="text" th:value="${user.email}" readonly>
-                    </div>
-                    <div>
-                        <p>비밀번호 재확인</p>
-                        <input type=" password" placeholder="비밀번호 재확인">
+                <div class="section2">
+                    <div class="bottom">
+                        <div>
+                            <input class="config-btn" type="submit" value="내 정보 수정하기">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="section2">
-                <div class="bottom">
-                    <div>
-                        <input class="config-btn" type="submit" value="내 정보 수정하기">
-                    </div>
-                </div>
-            </div>
+            </form>
         </section>
+        <script>
+            function onClickUpload() {
+                let input = document.getElementById("choose-profile-image");
+                input.click();
+            }
+        </script>
 
-        <!-- after -->
         <section>
             <h2>거래내역</h2>
             <div class="post-container">
@@ -146,7 +158,6 @@
             </div>
         </section>
     </main>
-
 </body>
 
 </html>

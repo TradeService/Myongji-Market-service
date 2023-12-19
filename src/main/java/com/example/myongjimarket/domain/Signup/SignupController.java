@@ -11,7 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class SignupController {
     @Autowired
     private SignupService signupService;
-
     @GetMapping()
     public ModelAndView getSignupPage(){
         ModelAndView modelAndView = new ModelAndView();
@@ -20,12 +19,12 @@ public class SignupController {
     }
     @PostMapping("")
     public ModelAndView registerUser(
-            @RequestParam("nickname") String nickname,
             @RequestParam("name") String name,
-            @RequestParam("password") String password,
-            @RequestParam("email") String email
+            @RequestParam("nickname") String nickname,
+            @RequestParam("email") String email,
+            @RequestParam("password") String password
     ) {
-        UserDto userDto = new UserDto(nickname, name, password, email);
+        UserDto userDto = new UserDto(name, nickname, "" ,email, password);
         User registeredUser = signupService.registerNewUser(userDto);
         ModelAndView modelAndView = new ModelAndView();
         if (registeredUser != null) {
