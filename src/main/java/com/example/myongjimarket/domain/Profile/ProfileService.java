@@ -11,4 +11,7 @@ public class ProfileService {
     public User getUserProfile(String nickname){
         return profileRepository.findByNickname(nickname);
     }
+    public void updateUserProfile(User user){
+        profileRepository.save(user);
+    }
 }
