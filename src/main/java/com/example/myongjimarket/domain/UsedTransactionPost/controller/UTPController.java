@@ -78,14 +78,16 @@ public class UTPController {
         return "redirect:/used-transaction";
     }
     @PostMapping("/addComment")
-    public String addComment(@RequestParam("postId") Long postId, @RequestParam("content") String content) {
+    public String addComment(@RequestParam("postId") Long postId, @RequestParam("content") String content, RedirectAttributes redirectAttributes) {
         commentService.addComment(postId, content);
+        redirectAttributes.addFlashAttribute("successMessage", "댓글 작성이 완료되었습니다.");
         return "redirect:/used-transaction/detail?id=" + postId;
     }
 
     @PostMapping("/like")
-    public String likePost(@RequestParam("postId") Long postId) {
+    public String likePost(@RequestParam("postId") Long postId, RedirectAttributes redirectAttributes) {
         utpService.likePost(postId);
+        redirectAttributes.addFlashAttribute("successMessage", "좋아요+1");
         return "redirect:/used-transaction/detail?id=" + postId;
     }
     @PostMapping("/reportPost")
