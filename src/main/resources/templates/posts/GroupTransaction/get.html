@@ -3,17 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <link rel="stylesheet" th:href="@{/GroupTransaction/get/get.css}">
 </head>
 <body>
-<h1>Posts</h1>
 <div>
-  <a th:href="@{/posts/{id}(id=${post.postId})}" th:text="${post.content}">Post Content</a>
-  <a th:href="@{/posts/{id}(id=${post.postId})}" th:text="${post.title}">Post Title</a>
-  <a th:href="@{/posts/{id}(id=${post.postId})}" th:text="${post.phoneNum}">Post Content</a>
+  <header class="center">
+    <a href="/"><h1><b>명지</b>마켓</h1></a>
 
-  <form th:action="@{/posts/delete/{id}(id=${post.postId})}" method="post">
-    <button type="submit">Delete</button>
-  </form>
+    <div class="user-profile">
+      <a href="/profile?nickname=soyun">내 정보</a>
+    </div>
+  </header>
+  <nav>
+    <ul class="center">
+      <li><a href="/used-transaction">중고거래</a></li>
+      <li><a href="/talent-transaction">재능기부</a></li>
+      <li><a href="/group-transaction">공동구매</a></li>
+    </ul>
+  </nav>
+<div class="container">
+  <div class="title"> <a th:href="@{/posts/{id}(id=${post.postId})}" th:text="${post.title}">Post Title</a></div>
+  <div class="subContainer">
+    <p class="boldtext">상품 이름</p>
+    <div class="productName">
+      <a th:href="@{/posts/{id}(id=${post.postId})}" th:text="${post.productName}">Product Name</a></div>
+    <p class="boldtext">상품 가격</p>
+    <div class="price"> <a th:href="@{/posts/{id}(id=${post.postId})}" th:text="${post.price}">Price</a></div>
+    <p class="boldtext">수령 장소</p>
+    <div class="place"> <a th:href="@{/posts/{id}(id=${post.postId})}" th:text="${post.place}">Place</a></div>
+    <p class="boldtext">내용</p>
+    <div class="content"> <a th:href="@{/posts/{id}(id=${post.postId})}" th:text="${post.content}">Post Content</a></div>
+    <p class="boldtext">연락처</p>
+    <div class="phoneNum"> <a th:href="@{/posts/{id}(id=${post.postId})}" th:text="${post.phoneNum}">PhoneNum</a></div>
+    <p class="boldtext">현재인원 / 최대인원 </p>
+    <div class="person">
+      <a class="now" th:href="@{/posts/{id}(id=${post.postId})}" th:text="${post.nowPerson}">now Person</a>
+      <span>/</span>
+      <a class="max" th:href="@{/posts/{id}(id=${post.postId})}" th:text="${post.maxPerson}">now Person</a>
+    </div>
+
+    <div class="buttondiv"> <div><button> <a th:href="@{/group-transaction/edit(id=${post.postId})}">수정하기</a></button></div>
+      <form th:action="@{/group-transaction/delete/{id}(id=${post.postId})}" method="post">
+        <button type="submit">삭제하기</button>
+      </form></div>
+
+  </div>
+</div>
+
+
 </div>
 </body>
 </html>

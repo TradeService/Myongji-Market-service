@@ -3,20 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Create New Post</title>
+    <link rel="stylesheet" th:href="@{/GroupTransaction/new/new.css}">
 </head>
 <body>
-<h1>New Post</h1>
-<form th:action="@{/group-transaction/post}" th:object="${post}" method="post">
-    <input type="text" th:field="*{title}" placeholder="Title"/>
-    <input type="text" th:field="*{productName}" placeholder="ProductName"/>
-    <input type="text" th:field="*{place}" placeholder="Place"/>
-    <input type="byte[]" th:field="*{picture}" placeholder="Picture"/>
-    <input type="text" th:field="*{phoneNum}" placeholder="PhoneNum"/>
-    <input type="int" th:field="*{maxPerson}" placeholder="MaxPerson"/>
-    <input type="int" th:field="*{nowPerson}" placeholder="nowPerson"/>
+<header class="center">
+    <a href="/"><h1><b>명지</b>마켓</h1></a>
 
-    <textarea th:field="*{content}" placeholder="Content"></textarea>
-    <input type="submit" value="Create"/>
-</form>
+    <div class="user-profile">
+        <a href="/profile?nickname=soyun">내 정보</a>
+    </div>
+</header>
+<nav>
+    <ul class="center">
+        <li><a href="/used-transaction">중고거래</a></li>
+        <li><a href="/talent-transaction">재능기부</a></li>
+        <li><a href="/group-transaction">공동구매</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="title"> <a th:href="@{/posts/{id}(id=${post.postId})}" th:text="${post.title}">Post Title</a></div>
+    <div class="subContainer">
+
+    <form th:action="@{/group-transaction/post}" th:object="${post}" method="post">
+        <p class="boldtext">게시물 제목</p>
+        <input type="text" th:field="*{title}" placeholder="Title"/>
+        <p class="boldtext">상품 이름</p>
+        <input type="text" th:field="*{productName}" placeholder="ProductName"/>
+        <p class="boldtext">상품 가격</p>
+        <input type="text" th:field="*{price}" placeholder="Price"/>
+        <p class="boldtext">수령 장소</p>
+        <input type="text" th:field="*{place}" placeholder="Place"/>
+        <p class="boldtext">연락처</p>
+        <input type="text" th:field="*{phoneNum}" placeholder="PhoneNum"/>
+        <p class="boldtext">현재인원 / 최대인원 </p>
+        <div class="person">
+            <input type="int" th:field="*{nowPerson}" placeholder="now"/>
+            <span>/</span>
+            <input type="int" th:field="*{maxPerson}" placeholder="Max"/>
+        </div>
+        <p class="boldtext">내용</p>
+        <textarea th:field="*{content}" placeholder="Content"></textarea>
+        <input class="create" type="submit" value="Create"/>
+    </form>
+    </div>
+</div>
 </body>
 </html>

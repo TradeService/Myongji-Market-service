@@ -38,7 +38,7 @@ public class GrouptransactionController {
     @GetMapping("/post/{id}")
     public String getGroupTransactionById(Model model,@PathVariable Long id){
         model.addAttribute("post", groupTransactionService.getPostById(id));
-        return "posts/GroupTransaction/post/";
+        return "posts/GroupTransaction/get";
     }
     @GetMapping("/edit")
     public String editPost(@RequestParam("id") Long id, Model model){

@@ -19,6 +19,7 @@ public class Post{
     public String productName;
     public String place;
     public byte[] picture;
+    public String price;
     public String content;
     public String phoneNum;
     public int maxPerson;
@@ -35,6 +36,7 @@ public class Post{
         this.productName = groupTransactionPost.getProductName();
         this.place = groupTransactionPost.getPlace();
         this.picture= groupTransactionPost.getPicture();
+        this.price = groupTransactionPost.getPrice();
         this.content = groupTransactionPost.getContent();
         this.phoneNum = groupTransactionPost.getPhoneNum();
         this.maxPerson = groupTransactionPost.getMaximumPerson();

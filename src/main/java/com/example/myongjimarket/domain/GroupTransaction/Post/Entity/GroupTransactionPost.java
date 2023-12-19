@@ -27,6 +27,9 @@ public class GroupTransactionPost {
     private String Place;
 
     @Column()
+    private String price;
+
+    @Column()
     private byte[] Picture;
 
     @Column()
